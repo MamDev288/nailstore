@@ -1,0 +1,79 @@
+body {
+    background: rgb(99, 39, 120);
+}
+.form-control:focus {
+    box-shadow: none;
+    border-color: #63a0fa;
+}
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none;
+}
+.profile-button:hover {
+    background: #682773;
+}
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none;
+}
+.profile-button:active {
+    background: #682773;
+    box-shadow: none;
+}
+.back:hover {
+    color: #682773;
+    cursor: pointer;
+}
+.labels {
+    font-size: 15px;
+}
+.add-experience:hover {
+    background: #ba68c8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #ba68c8;
+}
+.image-profile{
+    width: 150px;
+}
+
+#thong-tin-chung .image-profile {
+    margin: auto;
+}
+
+#thong-tin-chung .image-profile .image-cover{
+    border-radius: 100% !important;
+}
+
+#thong-tin-chung .hoten {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+#thong-tin-chung .text-with-icon {
+    text-align: left;
+}
+
+#thong-tin-chung .text-with-icon .icon{
+    border-radius: 100%;
+    background-color: #428bca;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+}
+
+#thong-tin-chung .text-with-icon label{
+    padding-left: 5px;
+    font-weight: 700;
+}
+
+.info-block {
+    border-left: 1px solid #bebaba;
+    margin-left: 40px;
+}
+
+#anh_nguoi_dung:hover{
+    opacity: 0.6;
+}

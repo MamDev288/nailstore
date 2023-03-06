@@ -1,0 +1,17 @@
+.form-chi-tiet-nhan-vien {
+    border: 1px solid #ddd;
+    margin: 0 -1px 0 0;
+    padding: 15px;
+}
+
+.custom-nav {
+    margin-bottom: 0 !important;
+}
+
+.border-download-field {
+    border: 1px solid #ddd;
+}
+
+#download-field {
+    padding: 5px 0 5px 0;
+}

@@ -1,0 +1,20 @@
+{
+    "require": {
+        "kartik-v/yii2-widget-datetimepicker": "@dev",
+        "kartik-v/yii2-widget-select2": "@dev",
+        "ezyang/htmlpurifier": "dev-master",
+        "nesbot/carbon": "^2.62",
+        "kartik-v/yii2-field-range":  "*",
+        "kartik-v/yii2-bootstrap5-dropdown": "@dev",
+        "kartik-v/yii2-export": "@dev",
+        "swiftmailer/swiftmailer": "^6.0",
+        "sizeg/yii2-jwt": "*",
+        "kartik-v/yii2-widget-timepicker": "dev-master",
+        "kartik-v/yii2-number": "dev-master"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    }
+}

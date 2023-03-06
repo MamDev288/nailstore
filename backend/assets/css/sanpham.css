@@ -1,0 +1,61 @@
+
+.card{
+    width: 100% !important;
+    height: auto;
+    background: #f5f1f1ad;
+    margin-top: 3%;
+    border-radius: 7px!important;
+    padding: 2%;
+    position: relative;
+
+}
+.btn-xoa-nv-phu-trach{
+    position: absolute;
+    top:0;
+    right: 5px;
+}
+.group-card{
+    overflow: auto;
+    height: auto;
+    max-height: 250px;
+}
+.sc2::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+.sc2::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+.sc2::-webkit-scrollbar-thumb {
+    background-color: #949697;
+    border-radius: 10px;
+}
+.hang-doi{
+    display: flex;
+    justify-content: center;
+}
+.to-left{
+    width: 50%;
+    padding-right: 15px;
+}
+.padding-right{
+    padding-right: 15px;
+}
+.to-right{
+    width: 50%;
+    padding-left: 15px;
+}
+.padding-left{
+    padding-left: 15px;
+}
+.required label{
+    position: relative;
+}
+.required label:after{
+    content: " *";
+    color: red;
+    font-size: 18px;
+    position: absolute;
+    right: -10px;
+}

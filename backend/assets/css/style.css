@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+*{padding: 0px;margin: 0px}
+body{
+    font-size: 15px;
+}
+nav{display: flex;align-items: center;background: #AB47BC;height: 60px;position: relative;border-bottom: 1px solid #495057}
+.icon{cursor: pointer;margin-right: 0px;line-height: 50px}.icon span{background: #f00;padding: 7px;border-radius: 50%;color: #fff;vertical-align: top;margin-left: -25px}
+.icon img{display: inline-block;width: 26px;margin-top: 4px}
+.icon:hover{opacity: .7}
+.notifications{width: 300px;height: 0px;opacity: 0;position: absolute;    top: 39px;
+    right: 13px;border-radius: 5px 0px 5px 5px;background-color: #fff;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)}
+.notifications h3{
+    font-size: 14px !important;
+    padding: 10px 10px 0 10px !important;
+    border-bottom: 1px solid #eee !important;
+    color: #000 !important;
+    margin-top: -3px !important;
+}
+.notifications h2 span{color: #f00}
+.notifications-item{display: flex;border-bottom: 1px solid #eee;padding: 6px 9px;margin-bottom: 0px;cursor: pointer}
+.notifications-item:hover{background-color: #eee}
+.notifications-item img{display: block;width: 50px;height: 50px;margin-right: 9px;border-radius: 50%;margin-top: 2px}
+.notifications-item .text h4{color: #777;font-size: 16px;margin-top: 3px}
+.notifications-item .text p{color: #0a0a0a;font-size: 12px}
+
+.navbar-nav > li > a {
+    color: #fff !important;
+}
+.navbar-nav > li > a > i{
+    color: #fff !important;
+}
+
+.fixed-color {
+    background-color: #344dba;
+}
+
+.white-text {
+    color: #fff !important;
+}
+
+#bell {
+    font-size: 20px;
+    color: #fff;
+}
+
+.badge-notification {
+    position: absolute;
+    right: -10px;
+    line-height: 1.5 !important;
+    padding: 2px 5px !important;
+    border-radius: 50% !important;
+    background: red !important;
+    color: white !important;
+    font-size: 11px !important;
+    font-weight: 300;
+    text-shadow: none !important;
+    text-align: center;
+
+}
+
+.font-notify {
+    color: #1c1e21;
+    font-weight: 600;
+    font-size: 13px;
+    margin: 5px;
+}
+
+.not-seen-text{
+    background-color: #e5eaff;
+}
+
+.header-notify{
+    margin-top: 10px;
+}
+
+.black-text-drop {
+    color: #0a0a0a !important;
+}
+
+.vcenter {
+    vertical-align: inherit !important;
+}
+
+div.required label.control-label:after {
+    content: " *";
+    color: red;
+}

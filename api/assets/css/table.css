@@ -1,0 +1,7 @@
+.kv-grid-table {
+    margin-top: 10px;
+}
+
+#crud-datatable-container {
+    margin-top: -10px;
+}

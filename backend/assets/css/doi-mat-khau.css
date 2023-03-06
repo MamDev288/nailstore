@@ -1,0 +1,12 @@
+.eye-icon {
+    position: absolute;
+    padding: 34px 25px 0 34px;
+    min-width: 20px;
+    right: 0;
+    color: #414141e0;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+}

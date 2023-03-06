@@ -1,0 +1,60 @@
+.column {
+    cursor: pointer;
+    float: left;
+    padding-bottom: 100px;
+}
+
+.portlet {
+    border: 2px solid #428bca;
+    border-radius: 0px !important;
+    background: #428bca0d;
+}
+
+.portlet-header {
+    padding: 0.2em 0.3em;
+    margin-bottom: 0.5em;
+    position: relative;
+    border-radius: 0px !important;
+    font-weight: 100 !important;;
+}
+
+.portlet-toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -8px;
+}
+
+.portlet-placeholder {
+    border: 1px dotted black;
+    margin: 0 1em 1em 0;
+    height: 50px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ui-widget-header {
+    border: 1px solid #e8e8e8;
+    background: #fcfcfc;
+    color: #333333;
+    font-weight: bold !important;
+    font-size: 11px;
+}
+
+.ui-widget.ui-widget-content {
+    border: 1px solid #e7e7e7;
+}
+
+.header {
+    background: #fcfcfc;
+    padding: 3%;
+    margin-bottom: 10px;
+    font-weight: bold !important;
+}
+
+.dropdown-menu {
+    top: 30% !important;
+}

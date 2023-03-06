@@ -1,0 +1,7 @@
+/vendor/
+/backend/runtime/
+/backend/runtime/logs/
+/backend/runtime/logs/app.log
+/assets/
+/__MACOSX/
+/node_modules/

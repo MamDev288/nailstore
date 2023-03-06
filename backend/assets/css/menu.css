@@ -1,0 +1,22 @@
+.menu-bars{
+    position: absolute;
+    top: 29%;
+    left: 5%;
+    text-decoration: none;
+    color:  #b2b1b3;
+}
+a:focus, a:hover {
+    color: #b2b1b3!important;
+    text-decoration: none!important;
+}
+@media (max-width: 992px) {
+    .menu-bars{
+        display: block!important;
+
+    }
+}
+@media (max-width: 1920px) {
+    .menu-bars{
+      display: none;
+    }
+}

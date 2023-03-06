@@ -1,0 +1,8 @@
+.dataTables_wrapper.dataTables_wrapper .dataTables_filter input {
+    padding: 1px 3px;
+}
+
+.dataTables_wrapper.dataTables_wrapper .dataTables_paginate .paginate_button {
+    min-width: 1em;
+    padding: 0.3em 0.7em;
+}

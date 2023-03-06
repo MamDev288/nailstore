@@ -1,0 +1,238 @@
+<?php
+
+use backend\models\User;
+use yii\helpers\Html;
+use common\models\myAPI;
+use yii\helpers\Url;
+use yii\helpers\VarDumper;
+use \backend\models\KeHoachTuyenDung;
+use \backend\models\TuyenDungDkNhuCauNs;
+
+?>
+<ul class="nav navbar-nav row-fluid" >
+    <li class="classic-menu-dropdown">
+        <a data-toggle="dropdown" href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true">
+            <i class="fa fa-users" ></i> Tuyển dụng <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu pull-left">
+            <?php if(myAPI::isAccess2('TuyenDungDkNhuCauNs', 'index')): ?>
+            <li class="dropdown-submenu" aria-haspopup="true">
+                <a href="javascript:;">
+                    <i class="fa fa-envelope-o"></i> Nhu cầu nhân sự </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <?=Html::a('<i class="fa fa-refresh"></i> Đăng ký chờ duyệt <i class="badge badge-pill badge-primary" >'.TuyenDungDkNhuCauNs::donTuyenDungChoDuyet().'</i>', Url::to(['tuyen-dung-dk-nhu-cau-ns/index', 'type' => 'cho_duyet']), ['title' => 'Phiếu đăng ký nhu cầu nhân sự chờ duyệt'])?>
+                    </li>
+                    <li>
+                        <?=Html::a('<i class="fa fa-check-circle"></i> Đăng ký đã duyệt <i class="badge badge-pill badge-primary" >'.TuyenDungDkNhuCauNs::donTuyenDungDaDuyet().'</i>', Url::to(['tuyen-dung-dk-nhu-cau-ns/index', 'type' => 'da_duyet']), ['title' => 'Phiếu đăng ký nhu cầu nhân sự đã duyệt'])?>
+                    </li>
+                    <li>
+                        <?=Html::a('<i class="fa fa-file-text-o"></i> Tất cả', Url::to(['tuyen-dung-dk-nhu-cau-ns/index']), ['title' => 'Phiếu đăng ký nhu cầu nhân sự'])?>
+                    </li>
+                </ul>
+            </li>
+            <?php endif; ?>
+            <!--            <li class="divider"> </li>-->
+            <?php if(myAPI::isAccess2('KeHoachTuyenDung', 'index')): ?>
+            <li class="dropdown-submenu" aria-haspopup="true">
+                <a href="javascript:;">
+                    <i class="fa fa-envelope-o"></i> KH Tuyển dụng </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <?=Html::a('<i class="fa fa-refresh"></i> Kế hoạch chờ duyệt <i class="badge badge-pill badge-primary" >'.KeHoachTuyenDung::keHoachChoDuyet().'</i>', Url::to(['ke-hoach-tuyen-dung/index', 'type' => 'cho_duyet']), ['title' => 'Kế hoạch tuyển dụng chờ duyệt'])?>
+                    </li>
+                    <li>
+                        <?=Html::a('<i class="fa fa-check-circle"></i> Kế hoạch đã duyệt <i class="badge badge-pill badge-primary" >'.KeHoachTuyenDung::keHoachDaDuyet().'</i>', Url::to(['ke-hoach-tuyen-dung/index', 'type' => 'da_duyet']), ['title' => 'Kế hoạch tuyển dụng đã duyệt'])?>
+                    </li>
+                    <li>
+                        <?=Html::a('<i class="fa fa-file-text-o"></i> Tất cả', Url::to(['ke-hoach-tuyen-dung/index']), ['title' => 'Kế hoạch tuyển dụng nhân sự'])?>
+                    </li>
+                </ul>
+            </li>
+            <?php endif; ?>
+
+            <li>
+                <?=Html::a('<i class="fa fa-file-text-o"></i> Ứng viên', Url::to(['ung-vien/index']))?>
+            </li>
+            <li>
+                <?=Html::a('<i class="fa fa-file-text-o"></i> Phỏng vấn lần 1', Url::to(['phong-van/index','type' => 1]))?>
+            </li>
+            <li>
+                <?=Html::a('<i class="fa fa-file-text-o"></i> Phỏng vấn lần 2', Url::to(['phong-van/index','type' => 2]))?>
+            </li>
+            <li>
+                <?=Html::a('<i class="fa fa-file-text-o"></i> Thử việc', Url::to(['phong-van/index','type' => 3]))?>
+            </li>
+        </ul>
+    </li>
+    <?php if(myAPI::isAccess2('NhanVien', 'index')): ?>
+    <li>
+        <?=Html::a('<i class="fa fa-building-o"></i> Phòng Ban', Url::to(['phong-ban/index']))?>
+    </li>
+    <?php endif; ?>
+
+    <?php if(myAPI::isAccess2('PhongBan', 'index')): ?>
+
+    <li>
+        <?=Html::a('<i class="fa fa-user"></i> Nhân sự', Url::to(['nhan-vien/index']))?>
+    </li>
+    <?php endif; ?>
+
+    <?php if(myAPI::isAccess2('NghiPhep', 'index')): ?>
+    <li>
+        <a data-toggle="dropdown" href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true">
+            <i class="fa fa-users" ></i> Xin nghỉ <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu pull-left">
+            <?php if(myAPI::isAccess2('NgayNghi', 'tat-ca-don-xin-nghi')): ?>
+
+                <li>
+                    <?=Html::a(' Tất cả đơn xin nghỉ', Url::to(['nghi-phep/tat-ca-don-xin-nghi']))?>
+
+                </li>
+            <?php endif; ?>
+            <li>
+                <?=Html::a('Xin nghỉ', Url::to(['xin-nghi/index']))?>
+            </li>
+            <li>
+                <?=Html::a('Xin đi muộn về sớm', Url::to(['di-muon-ve-som/index']))?>
+            </li>
+            <li>
+                <?=Html::a('Xin đi muộn về sớm thường niên', Url::to(['di-muon-ve-som-thuong-nien/index']))?>
+            </li>
+            <?php if(myAPI::isAccess2('DuyetNghiPhep', 'index')): ?>
+            <li>
+                <?=Html::a('Duyệt đơn xin nghỉ', Url::to(['duyet-nghi-phep/index']))?>
+
+            </li>
+            <?php endif; ?>
+            <?php if(myAPI::isAccess2('NgayNghi', 'index')): ?>
+
+            <li>
+                <?=Html::a(' Thiết lập ngày nghỉ chung', Url::to(['ngay-nghi/index']))?>
+
+            </li>
+            <?php endif; ?>
+
+        </ul>
+    </li>
+    <?php endif; ?>
+
+    <li>
+        <a data-toggle="dropdown" href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true">
+            <i class="fa fa-users" ></i> Chấm công <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu pull-left">
+            <?php if(myAPI::isAccess2('ChamCongTheoThang', 'index')): ?>
+            <li>
+                <?=Html::a('Chấm công theo tháng', Url::to(['cham-cong-theo-thang/index','ChamCongTheoThangSearch' => ['thang' =>date('Y-m')]]))?>
+            </li>
+            <?php endif; ?>
+            <?php if(myAPI::isAccess2('ChamCong', 'index')): ?>
+            <li>
+                <?=Html::a('Châm công theo ngày', Url::to(['cham-cong/index']))?>
+
+            </li>
+            <?php endif; ?>
+            <?php if(myAPI::isAccess2('CauHinhChamCong', 'index')): ?>
+            <li>
+                <?=Html::a('Cấu hình chấm công', Url::to(['cau-hinh-cham-cong/index']), ['title' => 'Cấu hình chấm công'])?>
+
+            </li>
+            <?php endif; ?>
+
+        </ul>
+    </li>
+
+    <?php if(myAPI::isAccess2('BangLuong', 'index')): ?>
+    <li>
+        <?=Html::a('<i class="fa fa-file"></i> Bảng Lương', Url::to(['bang-luong/index']))?>
+    </li>
+    <?php endif; ?>
+
+    <?php if(myAPI::isAccess2('HopDongNhanSu', 'index')): ?>
+    <li>
+        <?=Html::a('<i class="fa fa-file"></i> Hợp Đồng', Url::to(['hop-dong-nhan-su/index']))?>
+    </li>
+    <?php endif; ?>
+
+    <?php if(myAPI::isAccess2('BaoHiemNhanSu', 'index')): ?>
+    <li>
+        <?=Html::a('<i class="fa fa-file-text-o"></i> Bảo Hiểm', Url::to(['bao-hiem-nhan-su/index']))?>
+    </li>
+    <?php endif; ?>
+
+    <?php if(myAPI::isAccess2('DanhMuc', 'index')): ?>
+    <li class="classic-menu-dropdown">
+        <a data-toggle="dropdown" href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true">
+            <i class="fa fa-users" ></i> Danh mục <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu pull-left">
+            <li>
+                <?=Html::a('<i class="fa fa-file-text-o"></i> Trình độ chuyên môn', Url::to(['trinh-do-chuyen-mon/index']))?>
+            </li>
+            <li>
+                <?=Html::a('<i class="fa fa-file-text-o"></i> Chức danh', Url::to(['chuc-danh/index']))?>
+            </li>
+            <li>
+                <?=Html::a('<i class="fa fa-file-text-o"></i> Khu vực', Url::to(['khu-vuc/index']))?>
+            </li>
+            <li>
+                <?=Html::a('<i class="fa fa-file-text-o"></i> Loại Hợp Đồng', Url::to(['loai-hop-dong/index']))?>
+            </li>
+            <li>
+                <?=Html::a('<i class="fa fa-file-text-o"></i> Vị trí công việc', Url::to(['vi-tri-cong-viec/index']))?>
+            </li>
+            <li>
+                <?=Html::a('<i class="fa fa-file-text-o"></i> Lý do xin đi muộn về sớm thường niên', Url::to(['ly-do-xin-di-muon-ve-som-thuong-nien/index']))?>
+            </li>
+        </ul>
+    </li>
+    <?php endif; ?>
+    <?php if(myAPI::isAccess2('Cauhinh', 'index') ||
+        myAPI::isAccess2('VaiTro', 'index') ||
+        myAPI::isAccess2('ChucNang', 'index') ||
+        myAPI::isAccess2('User', 'index') ||
+        myAPI::isAccess2('DanhMuc', 'Index') ||
+        myAPI::isAccess2('PhanQuyen', 'index')): ?>
+        <li class="classic-menu-dropdown">
+            <a data-toggle="dropdown" href="javascript:;" data-hover="megamenu-dropdown" data-close-others="true">
+                <i class="fa fa-cog"></i> Hệ thống <i class="fa fa-angle-down"></i></a>
+            <ul class="dropdown-menu pull-left">
+                <?php if(myAPI::isAccess2('Cauhinh', 'index')): ?>
+                    <li>
+                        <?=Html::a('<i class="fa fa-cogs"></i> Cấu hình', Yii::$app->urlManager->createUrl(['cauhinh']))?>
+                    </li>
+                <?php endif; ?>
+                <?php if(myAPI::isAccess2('User', 'index')): ?>
+                    <li>
+                        <?=Html::a('<i class="fa fa-users"></i> Thành viên', Url::to(['user/index']))?>
+                    </li>
+                <?php endif; ?>
+                <?php if(myAPI::isAccess2('VaiTro', 'index')): ?>
+                    <li>
+                        <?=Html::a('<i class="fa fa-users"></i> Vai trò', Yii::$app->urlManager->createUrl(['vai-tro']))?>
+                    </li>
+                <?php endif; ?>
+                <?php if( myAPI::isAccess2('DanhMuc', 'Index')): ?>
+                    <li>
+                        <?=Html::a('<i class="fa fa-file"></i> Danh mục', Url::toRoute('danh-muc/index')) ?>
+                    </li>
+                <?php endif; ?>
+                <?php if(myAPI::isAccess2('ChucNang', 'index')): ?>
+                    <li>
+                        <?=Html::a('<i class="fa fa-bars"></i> Chức năng', Yii::$app->urlManager->createUrl(['chuc-nang']))?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if(myAPI::isAccess2('PhanQuyen', 'index')): ?>
+                    <li>
+                        <?=Html::a('<i class="fa fa-users"></i> Phân quyền', Yii::$app->urlManager->createUrl(['phan-quyen']))?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if(myAPI::isAccess2('Queue', 'index')): ?>
+                    <li>
+                        <?=Html::a('<i class="fa fa-clock-o"></i> Hàng đợi', Yii::$app->urlManager->createUrl(['queue']))?>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </li>
+    <?php endif; ?>
+</ul>
